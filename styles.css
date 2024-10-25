@@ -55,3 +55,46 @@
     flex-shrink: 0;
   }
   
+
+  .player {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.player input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}
+.player span {
+    margin-right: 10px;
+}
+.player button {
+    flex-shrink: 0;
+}
+.reset-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+  
+
+.player {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .player input[type="text"] {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .player span {
+        margin-right: 10px;
+    }
+    .player button {
+        flex-shrink: 0;
+    }
+    .reset-button {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
