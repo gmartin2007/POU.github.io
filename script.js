@@ -44,6 +44,14 @@ function updateUI() {
     `;
     document.getElementById("playersSection").appendChild(playerDiv);
   });
+
+  // Añadir botón de reinicio al final de la sección de jugadores
+  const resetButtonDiv = document.createElement("div");
+  resetButtonDiv.classList.add("reset-button");
+  resetButtonDiv.innerHTML = `
+    <button onclick="confirmReset()">Reiniciar Datos</button>
+  `;
+  document.getElementById("playersSection").appendChild(resetButtonDiv);
 }
 
 // Función para actualizar el nombre del jugador
@@ -81,11 +89,22 @@ function generatePlayers() {
     playerDiv.classList.add("player");
     playerDiv.innerHTML = `
       <input type="text" value="" placeholder="Jugador ${i + 1}" onchange="updatePlayerName(${i}, this.value)" />
-      <span>€${amountPerPlayer.toFixed(2)}</span>
+      <span>Debe: €${amountPerPlayer.toFixed(2)}</span>
       <button onclick="togglePayment(${i})">No Pagado</button>
     `;
     document.getElementById("playersSection").appendChild(playerDiv);
   }
+
+  // Añadir botón de reinicio al final de la sección de jugadores
+  const resetButtonDiv = document.createElement("div");
+  resetButtonDiv.classList.add("reset-button");
+  resetButtonDiv.innerHTML = `
+    <button onclick="confirmReset()">Reiniciar Datos</button>
+  `;
+  document.getElementById("playersSection").appendChild(resetButtonDiv);
+
+  // Ocultar el botón "Continuar"
+  document.querySelector('.config-section').style.display = 'none';
 
   // Reiniciar los contadores
   totalPaid = 0;
@@ -122,4 +141,21 @@ function updateSummary() {
   const remainingAmount = totalAmount - totalPaid;
   document.getElementById("totalPaid").textContent = totalPaid.toFixed(2);
   document.getElementById("remainingAmount").textContent = remainingAmount.toFixed(2);
+}
+
+// Función para confirmar el reinicio de los datos
+function confirmReset() {
+  const confirmation = confirm("¿Estás seguro de que deseas reiniciar los datos?");
+  if (confirmation) {
+    resetData();
+  }
+}
+
+// Función para reiniciar los datos
+function resetData() {
+  players = [];
+  amountPerPlayer = 0;
+  totalPaid = 0;
+  saveData();
+  location.reload(); // Recargar la página para reiniciar la aplicación
 }
