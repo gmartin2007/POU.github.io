@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .config-section, .players-section, .summary-section {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .player {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .paid {
+    background-color: green;
+    color: white;
+  }
+  
+  .player {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .player input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .player span {
+    margin-right: 10px;
+  }
+ .player button {
+    flex-shrink: 0;
+  }
+  

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paid or Unpaid</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Paid Or Unpaid</h1>
+    
+    <!-- Sección para definir jugadores y monto -->
+    <div class="config-section">
+      <label for="numPlayers">Nº de Jugadores:</label><br>
+      <input type="number" id="numPlayers" min="1" placeholder="Ej. 10pax."><br> 
+      <br>
+      
+      <label for="totalAmount">Precio Pista:</label><br>
+      <input type="number" id="totalAmount" min="0" placeholder="Ej. 100€"><br>
+      
+      <button onclick="generatePlayers()">Continuar</button>
+    </div>
+
+    <!-- Sección de listado de jugadores -->
+    <div class="players-section" id="playersSection">
+      <!-- Aquí se generará la lista de jugadores dinámicamente -->
+    </div>
+    
+    <!-- Sección de resumen de pagos -->
+    <div class="summary-section">
+      <p>Total Recaudado: $<span id="totalPaid">0</span></p>
+      <p>Restante por Pagar: $<span id="remainingAmount">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
